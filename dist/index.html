@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>cv maker</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abbas Uddin - CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-4 sm:p-8">
+
+    <div class="max-w-4xl mx-auto no-print mb-4 flex justify-end gap-3">
+        <button id="btn-edit" onclick="toggleEditMode()" class="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300">
+            Edit CV
+        </button>
+        <button id="btn-download" onclick="window.print()" class="btn-download bg-gray-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition duration-300">
+            Download as PDF
+        </button>
+    </div>
+
+    <div class="cv-container max-w-4xl mx-auto bg-white p-8 sm:p-12 shadow-2xl rounded-lg border border-gray-200">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="editable text-4xl font-bold text-gray-800 tracking-tight" contenteditable="false">ABBAS UDDIN</h1>
+            <p class="editable text-sm text-gray-600 mt-2" contenteditable="false">
+                Greater London, E7 8DW | +44 7435 010523 | abbax.uddin@gmail.com
+            </p>
+        </header>
+
+        <main id="cv-content">
+            <!-- Professional Summary -->
+            <section class="mb-6">
+                <h2 class="editable text-xl font-bold text-blue-700 border-b-2 border-gray-200 pb-2 mb-3" contenteditable="false">Professional Summary</h2>
+                <p class="editable text-gray-700 text-sm leading-relaxed" contenteditable="false">
+                    Friendly, hardworking, and customer-focused individual with over 3 years of experience in retail and customer service. Skilled at working in fast-paced environments, handling multiple tasks, and providing excellent service with a smile. Reliable team player with strong communication skills, committed to maintaining high standards of cleanliness, efficiency, and customer satisfaction. Excited to bring enthusiasm and dedication to McDonald's as a Crew Member.
+                </p>
+            </section>
+
+            <!-- Education -->
+            <section class="mb-6">
+                <h2 class="editable text-xl font-bold text-blue-700 border-b-2 border-gray-200 pb-2 mb-3" contenteditable="false">Education</h2>
+                <p class="editable text-gray-800" contenteditable="false"><span class="font-semibold">BSc in Computing Systems</span> | Ulster University London | Jan 2024 - Sep 2026</p>
+               <p class="editable text-gray-800" contenteditable="false"><span class="font-semibold">BSc in Computer Science and Engineering</span> | Sylhet International University | Sep 2022 - Jan 2024</p>
+            </section>
+
+            <!-- Awards -->
+            <section class="mb-6">
+                <h2 class="editable text-xl font-bold text-blue-700 border-b-2 border-gray-200 pb-2 mb-3" contenteditable="false">Awards</h2>
+                <p class="editable text-gray-800" contenteditable="false"><span class="font-semibold">National IT Competition (Winner)</span> | Bangladesh Computer Council Dhaka | 2022 & 2023</p>
+            </section>
+
+            <!-- Work Experience -->
+            <section id="work-experience" class="mb-6">
+                <h2 class="editable text-xl font-bold text-blue-700 border-b-2 border-gray-200 pb-2 mb-3" contenteditable="false">Work Experience</h2>
+                <div class="experience-item mb-4">
+                    <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'experience-item')">Delete Block</button>
+                    <h3 class="editable text-lg font-semibold text-gray-800" contenteditable="false">Sales Assistant</h3>
+                    <p class="editable text-sm text-gray-600 mb-2" contenteditable="false">Selection Furniture | London, UK | Feb 2024 – Present</p>
+                    <ul class="editable-list list-disc list-inside text-gray-700 text-sm space-y-1">
+                        <li class="editable" contenteditable="false">
+                            Provided friendly and efficient customer service, ensuring a positive shopping experience.
+                            <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'li')">-</button>
+                        </li>
+                        <li class="editable" contenteditable="false">
+                            Maintained cleanliness and organisation across the store to meet high presentation standards.
+                            <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'li')">-</button>
+                        </li>
+                        <li class="editable" contenteditable="false">
+                            Assisted with product displays and basic furniture assembling.
+                            <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'li')">-</button>
+                        </li>
+                        <li class="editable" contenteditable="false">
+                            Worked collaboratively with colleagues to achieve sales and customer service goals.
+                            <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'li')">-</button>
+                        </li>
+                    </ul>
+                    <button class="edit-controls btn-add no-print" onclick="addItem(this)">+ Add Item</button>
+                </div>
+                <div class="experience-item">
+                    <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'experience-item')">Delete Block</button>
+                    <h3 class="editable text-lg font-semibold text-gray-800" contenteditable="false">Customer Service / Retail Sales Assistant</h3>
+                    <p class="editable text-sm text-gray-600 mb-2" contenteditable="false">Ali Store | London, UK | Apr 2019 – Jun 2022</p>
+                    <ul class="editable-list list-disc list-inside text-gray-700 text-sm space-y-1">
+                        <li class="editable" contenteditable="false">
+                            Delivered excellent service to diverse customers, often exceeding sales targets.
+                            <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'li')">-</button>
+                        </li>
+                        <li class="editable" contenteditable="false">
+                            Handled customer inquiries and complaints with professionalism and care.
+                            <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'li')">-</button>
+                        </li>
+                        <li class="editable" contenteditable="false">
+                            Replenished stock, maintained store hygiene, and supported smooth daily operations.
+                            <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'li')">-</button>
+                        </li>
+                        <li class="editable" contenteditable="false">
+                            Collaborated with team members to work effectively during busy trading periods.
+                            <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'li')">-</button>
+                        </li>
+                    </ul>
+                    <button class="edit-controls btn-add no-print" onclick="addItem(this)">+ Add Item</button>
+                </div>
+                <button class="edit-controls btn-add-section no-print" onclick="addExperience()">+ Add Experience</button>
+            </section>
+
+            <!-- Key Skills -->
+            <section class="mb-6">
+                <h2 class="editable text-xl font-bold text-blue-700 border-b-2 border-gray-200 pb-2 mb-3" contenteditable="false">Key Skills</h2>
+                <ul class="editable-list list-disc list-inside text-gray-700 text-sm space-y-1">
+                    <li class="editable" contenteditable="false">
+                        <span class="font-semibold">Customer Service:</span> Friendly communication, problem-solving, and building rapport.
+                        <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'li')">-</button>
+                    </li>
+                    <li class="editable" contenteditable="false">
+                        <span class="font-semibold">Fast-Paced Work:</span> Ability to multitask efficiently during busy periods.
+                        <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'li')">-</button>
+                    </li>
+                    <li class="editable" contenteditable="false">
+                        <span class="font-semibold">Teamwork:</span> Reliable, supportive, and cooperative in team environments.
+                        <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'li')">-</button>
+                    </li>
+                    <li class="editable" contenteditable="false">
+                        <span class="font-semibold">Cleanliness & Safety:</span> Committed to hygiene standards and safe working practices.
+                        <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'li')">-</button>
+                    </li>
+                    <li class="editable" contenteditable="false">
+                        <span class="font-semibold">Organisation:</span> Strong time management and ability to prioritise tasks.
+                        <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'li')">-</button>
+                    </li>
+                    <li class="editable" contenteditable="false">
+                        <span class="font-semibold">Food Service Awareness:</span> Knowledge of service quality, presentation, and customer-first approach.
+                        <button class="edit-controls btn-delete no-print" onclick="deleteItem(this, 'li')">-</button>
+                    </li>
+                </ul>
+                <button class="edit-controls btn-add no-print" onclick="addItem(this)">+ Add Skill</button>
+            </section>
+
+            <!-- Languages -->
+            <section class="mb-6">
+                <h2 class="editable text-xl font-bold text-blue-700 border-b-2 border-gray-200 pb-2 mb-3" contenteditable="false">Languages</h2>
+                 <p class="editable text-gray-700 text-sm" contenteditable="false">
+                     <span class="font-semibold">English</span> (Fluent), 
+                     <span class="font-semibold">Bengali</span> (Native), 
+                     <span class="font-semibold">Hindi</span> (Conversational), 
+                     <span class="font-semibold">Urdu</span> (Conversational), 
+                     <span class="font-semibold">Punjabi</span> (Basic understanding)
+                </p>
+            </section>
+
+            <!-- Interests -->
+            <section>
+                <h2 class="editable text-xl font-bold text-blue-700 border-b-2 border-gray-200 pb-2 mb-3" contenteditable="false">Interests</h2>
+                <p class="editable text-gray-700 text-sm" contenteditable="false">Food service, customer experience, teamwork, technology, and community engagement.</p>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

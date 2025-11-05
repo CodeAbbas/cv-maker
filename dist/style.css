@@ -1,0 +1,100 @@
+body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Styles for Edit Mode */
+        .editable[contenteditable="true"] {
+            outline: 2px dashed #3b82f6; /* blue-500 */
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+            cursor: text;
+            background-color: #eff6ff; /* blue-50 */
+            border-radius: 4px;
+            padding: 2px 4px;
+        }
+
+        /* Hide edit controls by default */
+        .edit-controls {
+            display: none;
+        }
+
+        /* Show edit controls when .editing class is present on the body */
+        .editing .edit-controls {
+            display: inline-block;
+            margin-left: 8px;
+            font-size: 0.8rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+        
+        .btn-delete {
+            background-color: #ef4444; /* red-500 */
+        }
+        .btn-add {
+            background-color: #22c55e; /* green-500 */
+            margin-top: 8px;
+        }
+        .btn-add-section {
+             background-color: #3b82f6; /* blue-500 */
+             margin-top: 12px;
+             font-weight: 600;
+             padding: 4px 8px;
+        }
+
+        /* Style list items to relative for absolute positioning of delete button */
+        .editable-list > li {
+            position: relative;
+            padding-right: 20px; /* Make space for delete button */
+        }
+        .editable-list .btn-delete {
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 0px 5px;
+            font-weight: bold;
+            font-size: 0.7rem;
+            border-radius: 9999px; /* circle */
+        }
+        
+        .experience-item {
+            position: relative;
+        }
+        .experience-item .btn-delete {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-weight: 600;
+        }
+
+        /* Hide Download button when editing */
+        .editing .btn-download {
+            display: none;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .cv-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                border: none !important;
+            }
+            /* Hide any remaining edit controls during print */
+            .edit-controls {
+                display: none !important;
+            }
+            .editable[contenteditable="true"] {
+                outline: none;
+                box-shadow: none;
+                background-color: transparent;
+                padding: 0;
+            }
+        }
